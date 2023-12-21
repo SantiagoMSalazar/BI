@@ -41,19 +41,18 @@ ID_CUSTOMER
 create table INVOICE (
    ID_CUSTOMER          INT4                 not null,
    ID_INVOICE           INT4                 not null,
-   ID_ANTIVIRUS         INT4                 null,
+   ID_ANTIVIRUS         INT4                 not null,
    DATE                 DATE                 not null,
    SUBTOTAL             MONEY                not null,
    TAXES                MONEY                not null,
    TOTAL                MONEY                not null,
-   constraint PK_INVOICE primary key (ID_CUSTOMER, ID_INVOICE)
+   constraint PK_INVOICE primary key (ID_INVOICE)
 );
 
 /*==============================================================*/
 /* Index: INVOICE_PK                                            */
 /*==============================================================*/
 create unique index INVOICE_PK on INVOICE (
-ID_CUSTOMER,
 ID_INVOICE
 );
 
