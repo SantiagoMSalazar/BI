@@ -67,9 +67,7 @@ create table SALES_FACT_TABLE (
    ID_TIME              INT4                 not null,
    TAXES                MONEY                not null,
    TOTAL_SALES          MONEY                not null,
-   TOTAL_ANTIVIRUS_SOLD INT4                 not null,
-   SATISFACTION_SCORE   INT2                 not null,
-   UTILITY              MONEY                not null
+   TOTAL_ANTIVIRUS_SOLD INT4                 not null
 );
 
 /*==============================================================*/

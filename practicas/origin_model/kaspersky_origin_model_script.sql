@@ -77,7 +77,7 @@ create table PLAN_ANTIVIRUS (
    ID_ANTIVIRUS         INT4                 not null,
    NAME                 CHAR(50)             not null,
    DESCRIPTION          CHAR(100)            not null,
-   MONTHLY_PRICE        MONEY                not null,
+   PRICE                MONEY                not null,
    DURATION_YEARS       INT4                 not null,
    NUMBER_OF_USERS_RANGE INT4                 not null,
    TYPE                 CHAR(30)             not null,

@@ -579,8 +579,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Invoice aux</from>
-      <to>Invoice aux 2</to>
+      <from>Invoice  Aux</from>
+      <to>Factura Aux 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -784,8 +784,8 @@ FROM "public".customer
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>144</yloc>
+      <xloc>272</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -828,8 +828,8 @@ FROM "public".customer
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>144</yloc>
+      <xloc>448</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -872,8 +872,8 @@ FROM "public".customer
       </output>
     </remotesteps>
     <GUI>
-      <xloc>680</xloc>
-      <yloc>144</yloc>
+      <xloc>640</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -893,7 +893,7 @@ FROM "public".customer
   id_antivirus
 , "name"
 , description
-, monthly_price
+, price
 , duration_years
 , number_of_users_range
 , "type"
@@ -979,11 +979,11 @@ FROM "public".plan_antivirus
       <value-meta>
         <type>Number</type>
         <storagetype>normal</storagetype>
-        <name>monthly_price</name>
+        <name>price</name>
         <length>-1</length>
         <precision>-1</precision>
         <origin>plan_antivirus</origin>
-        <comments>monthly_price</comments>
+        <comments>price</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -1101,8 +1101,8 @@ FROM "public".plan_antivirus
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>256</yloc>
+      <xloc>272</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1153,8 +1153,8 @@ FROM "public".plan_antivirus
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>256</yloc>
+      <xloc>464</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1197,8 +1197,8 @@ FROM "public".plan_antivirus
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>256</yloc>
+      <xloc>656</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1402,8 +1402,8 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>368</yloc>
+      <xloc>192</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1434,8 +1434,8 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>368</yloc>
+      <xloc>464</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1478,8 +1478,8 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>368</yloc>
+      <xloc>752</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1513,8 +1513,8 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>368</yloc>
+      <xloc>320</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1584,13 +1584,13 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>368</yloc>
+      <xloc>608</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Invoice aux</name>
+    <name>Invoice  Aux</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1624,7 +1624,7 @@ FROM "public".invoice
         <name>id_customer</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>id_customer</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1647,7 +1647,7 @@ FROM "public".invoice
         <name>id_invoice</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>id_invoice</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1670,7 +1670,7 @@ FROM "public".invoice
         <name>id_antivirus</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>id_antivirus</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1693,7 +1693,7 @@ FROM "public".invoice
         <name>date</name>
         <length>-1</length>
         <precision>-1</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>date</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1716,7 +1716,7 @@ FROM "public".invoice
         <name>subtotal</name>
         <length>-1</length>
         <precision>-1</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>subtotal</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1739,7 +1739,7 @@ FROM "public".invoice
         <name>taxes</name>
         <length>-1</length>
         <precision>-1</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>taxes</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1762,7 +1762,7 @@ FROM "public".invoice
         <name>total</name>
         <length>-1</length>
         <precision>-1</precision>
-        <origin>Invoice aux</origin>
+        <origin>Invoice  Aux</origin>
         <comments>total</comments>
         <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1789,13 +1789,13 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>464</yloc>
+      <xloc>304</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Invoice aux 2</name>
+    <name>Factura Aux 2</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1807,7 +1807,7 @@ FROM "public".invoice
     </partitioning>
     <connection>kaspersky_dimension_model_connection</connection>
     <schema>public</schema>
-    <table>Invoice</table>
+    <table>invoice</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1833,8 +1833,8 @@ FROM "public".invoice
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
-      <yloc>464</yloc>
+      <xloc>512</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

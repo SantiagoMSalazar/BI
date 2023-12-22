@@ -8,7 +8,7 @@ VALUES
   (5, 'Carlos Rodriguez', 'carlos.r@email.com', '999-888-7777', '1980-12-01', 'Spain', 'Individual');
 
 -- Insertar datos en la tabla PLAN_ANTIVIRUS
-INSERT INTO PLAN_ANTIVIRUS (ID_ANTIVIRUS, NAME, DESCRIPTION, MONTHLY_PRICE, DURATION_YEARS, NUMBER_OF_USERS_RANGE, TYPE, TIER)
+INSERT INTO PLAN_ANTIVIRUS (ID_ANTIVIRUS, NAME, DESCRIPTION, PRICE, DURATION_YEARS, NUMBER_OF_USERS_RANGE, TYPE, TIER)
 VALUES
   (1, 'Business Security', 'Complete security solution for enterprises', 99.99, 1, 4, 'Business', 'Premium'),
   (2, 'Home Protection', 'Basic antivirus protection for home users', 29.99, 1, 3, 'Home', 'Standard'),
@@ -19,8 +19,8 @@ VALUES
 -- Insertar datos en la tabla INVOICE
 INSERT INTO INVOICE (ID_CUSTOMER, ID_INVOICE, ID_ANTIVIRUS, DATE, SUBTOTAL, TAXES, TOTAL)
 VALUES
-  (1, 1, 2, '2023-01-15', 99.99, 10.00, 109.99),
-  (2, 2, 4, '2023-02-20', 149.99, 15.00, 164.99),
-  (3, 3, 1, '2023-03-25', 99.99, 10.00, 109.99),
-  (4, 4, 2, '2023-04-30', 49.99, 5.00, 54.99),
-  (5, 5, 3, '2023-05-05', 79.99, 8.00, 87.99);
+  (1, 1, 2, '2023-01-15', 29.99, 2.99, 33.98),
+  (2, 2, 4, '2023-02-20', 49.99, 4.99, 54.98),
+  (3, 3, 1, '2023-03-25', 99.99, 9.99, 109.98),
+  (4, 4, 2, '2023-04-30', 29.99, 2.99, 33.98),
+  (5, 5, 3, '2023-05-05', 149.99, 14.99, 164.98);
