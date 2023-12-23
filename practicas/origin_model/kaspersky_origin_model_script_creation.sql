@@ -1,18 +1,24 @@
-drop index if exists CUSTOMER_PK;
+/*==============================================================*/
+/* DBMS name:      PostgreSQL 8                                 */
+/* Created on:     23/12/2023 9:25:34                           */
+/*==============================================================*/
 
-drop table if exists CUSTOMER;
 
-drop index if exists APPEARS_FK;
+drop index CUSTOMER_PK;
 
-drop index if exists HAVE_FK;
+drop table CUSTOMER;
 
-drop index if exists INVOICE_PK;
+drop index APPEARS_FK;
 
-drop table if exists INVOICE;
+drop index HAVE_FK;
 
-drop index if exists PLAN_ANTIVIRUS_PK;
+drop index INVOICE_PK;
 
-drop table if exists PLAN_ANTIVIRUS;
+drop table INVOICE;
+
+drop index PLAN_ANTIVIRUS_PK;
+
+drop table PLAN_ANTIVIRUS;
 
 /*==============================================================*/
 /* Table: CUSTOMER                                              */
@@ -36,16 +42,40 @@ ID_CUSTOMER
 );
 
 /*==============================================================*/
+/* Table: PLAN_ANTIVIRUS                                        */
+/*==============================================================*/
+create table PLAN_ANTIVIRUS (
+   ID_ANTIVIRUS         INT4                 not null,
+   NAME                 CHAR(50)             not null,
+   DESCRIPTION          CHAR(100)            not null,
+   PRICE                MONEY                not null,
+   DURATION_YEARS       INT4                 not null,
+   NUMBER_OF_USERS_RANGE INT4                 not null,
+   TYPE                 CHAR(30)             not null,
+   TIER                 CHAR(20)             not null,
+   MANTAINANCE_COST     MONEY                not null,
+   constraint PK_PLAN_ANTIVIRUS primary key (ID_ANTIVIRUS)
+);
+
+/*==============================================================*/
+/* Index: PLAN_ANTIVIRUS_PK                                     */
+/*==============================================================*/
+create unique index PLAN_ANTIVIRUS_PK on PLAN_ANTIVIRUS (
+ID_ANTIVIRUS
+);
+
+/*==============================================================*/
 /* Table: INVOICE                                               */
 /*==============================================================*/
 create table INVOICE (
-   ID_CUSTOMER          INT4                 not null,
    ID_INVOICE           INT4                 not null,
    ID_ANTIVIRUS         INT4                 not null,
+   ID_CUSTOMER          INT4                 not null,
    DATE                 DATE                 not null,
    SUBTOTAL             MONEY                not null,
-   TAXES                MONEY                not null,
-   TOTAL                MONEY                not null,
+   TAXES                MONEY                GENERATED ALWAYS AS (PLAN_ANTIVIRUS.PRICE * 0.12) STORED,
+   TOTAL                MONEY                GENERATED ALWAYS AS (INVOICE.SUBTOTAL - INVOICE.TAXES) STORED,
+   SATISFACTION_SCORE   INT4                 not null,
    constraint PK_INVOICE primary key (ID_INVOICE)
 );
 
@@ -70,28 +100,6 @@ create  index APPEARS_FK on INVOICE (
 ID_ANTIVIRUS
 );
 
-/*==============================================================*/
-/* Table: PLAN_ANTIVIRUS                                        */
-/*==============================================================*/
-create table PLAN_ANTIVIRUS (
-   ID_ANTIVIRUS         INT4                 not null,
-   NAME                 CHAR(50)             not null,
-   DESCRIPTION          CHAR(100)            not null,
-   PRICE                MONEY                not null,
-   DURATION_YEARS       INT4                 not null,
-   NUMBER_OF_USERS_RANGE INT4                 not null,
-   TYPE                 CHAR(30)             not null,
-   TIER                 CHAR(20)             not null,
-   constraint PK_PLAN_ANTIVIRUS primary key (ID_ANTIVIRUS)
-);
-
-/*==============================================================*/
-/* Index: PLAN_ANTIVIRUS_PK                                     */
-/*==============================================================*/
-create unique index PLAN_ANTIVIRUS_PK on PLAN_ANTIVIRUS (
-ID_ANTIVIRUS
-);
-
 alter table INVOICE
    add constraint FK_INVOICE_APPEARS_PLAN_ANT foreign key (ID_ANTIVIRUS)
       references PLAN_ANTIVIRUS (ID_ANTIVIRUS)
@@ -101,3 +109,4 @@ alter table INVOICE
    add constraint FK_INVOICE_HAVE_CUSTOMER foreign key (ID_CUSTOMER)
       references CUSTOMER (ID_CUSTOMER)
       on delete restrict on update restrict;
+

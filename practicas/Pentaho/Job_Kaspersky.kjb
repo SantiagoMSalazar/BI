@@ -304,7 +304,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
+      <xloc>144</xloc>
       <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
@@ -315,7 +315,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\PC\OneDrive - Escuela Politécnica Nacional\Documentos\Software\2023B\BI\BI_Repo Santi\BI\practicas\Pentaho\Transformation 1 Roman.ktr</filename>
+      <filename>C:/Users/PC/OneDrive - Escuela Politécnica Nacional/Documentos/Software/2023B/BI/BI_Repo Santi/BI/practicas/Pentaho/TransformationOriginToFact.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -382,7 +382,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>464</xloc>
       <yloc>96</yloc>
       <attributes_kjc/>
     </entry>
