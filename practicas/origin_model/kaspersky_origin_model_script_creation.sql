@@ -73,8 +73,8 @@ create table INVOICE (
    ID_CUSTOMER          INT4                 not null,
    DATE                 DATE                 not null,
    SUBTOTAL             MONEY                not null,
-   TAXES                MONEY                GENERATED ALWAYS AS (PLAN_ANTIVIRUS.PRICE * 0.12) STORED,
-   TOTAL                MONEY                GENERATED ALWAYS AS (INVOICE.SUBTOTAL - INVOICE.TAXES) STORED,
+   TAXES                MONEY                not null,
+   TOTAL                MONEY                not null,
    SATISFACTION_SCORE   INT4                 not null,
    constraint PK_INVOICE primary key (ID_INVOICE)
 );
