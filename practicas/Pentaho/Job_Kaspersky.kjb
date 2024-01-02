@@ -315,7 +315,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/PC/OneDrive - Escuela Politécnica Nacional/Documentos/Software/2023B/BI/BI_Repo Santi/BI/practicas/Pentaho/TransformationOriginToFact.ktr</filename>
+      <filename>C:/Develop/Business_intelligence/BI/practicas/Pentaho/TransformationOriginToFact.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -354,7 +354,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:\Users\PC\OneDrive - Escuela Politécnica Nacional\Documentos\Software\2023B\BI\BI_Repo Santi\BI\practicas\Pentaho\Transformation Hechos Ventas.ktr</filename>
+      <filename>C:/Develop/Business_intelligence/BI/practicas/Pentaho/Transformation Hechos Ventas.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
