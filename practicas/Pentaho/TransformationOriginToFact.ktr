@@ -1880,10 +1880,6 @@ FROM "public".plan_antivirus
         <name>tier</name>
         <rename/>
       </field>
-      <field>
-        <name>mantainance_cost</name>
-        <rename/>
-      </field>
       <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>

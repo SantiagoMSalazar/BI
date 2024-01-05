@@ -557,8 +557,8 @@
     </partitioning>
     <connection>kaspersky_dimension_connection</connection>
     <sql>SELECT 
-invoice.id_customer,
-invoice.id_antivirus,
+dimension_customer.id_customer,
+dimension_plan_antivirus.id_antivirus,
 dimension_time.id_time, 
 satisfaction_score,
 total,
@@ -567,11 +567,14 @@ mantainance_cost,
 price
 FROM
 invoice 
-inner join dimension_time on invoice.date = dimension_time.date
+inner join dimension_time 
+on invoice.date = dimension_time.date
 inner join plan_antivirus 
 on invoice.id_antivirus = plan_antivirus.id_antivirus
-
-
+inner join dimension_customer 
+ON dimension_customer.sk_customer = invoice.id_customer
+inner join dimension_plan_antivirus
+ON dimension_plan_antivirus.sk_antivirus = invoice.id_antivirus
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -584,7 +587,7 @@ on invoice.id_antivirus = plan_antivirus.id_antivirus
         <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>id_customer</name>
-        <length>9</length>
+        <length>15</length>
         <precision>0</precision>
         <origin>JOIN TABLE</origin>
         <comments>id_customer</comments>
@@ -607,7 +610,7 @@ on invoice.id_antivirus = plan_antivirus.id_antivirus
         <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>id_antivirus</name>
-        <length>9</length>
+        <length>15</length>
         <precision>0</precision>
         <origin>JOIN TABLE</origin>
         <comments>id_antivirus</comments>
